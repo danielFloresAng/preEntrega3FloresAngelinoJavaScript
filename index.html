@@ -3,25 +3,33 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poiret+One&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500&family=Sacramento&family=Ysabeau+Office:ital,wght@0,1;0,100;0,200;0,300;0,400;0,600;0,700;0,800;1,1;1,100;1,200;1,300&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    
     <title>Ahorro e inversión</title>
   </head>
   <body>
     <h1>Ahorro e inversión</h1>
-    <p>Inversión con rendimiento de 15% anual</p> <br>
+    <p class="#">Inversión con rendimiento de 15% anual</p> <br>
 
+    <div class="contenedorSimulador">
+      <label for="ingresarCantidad">Ingresa la cantidad a invertir: </label><br>
+      <input type="number" id="ingresarCantidad" placeholder="Ingresa la cantidad">
+      <button id="botonActualizarInversion">Actualizar inversión</button>
 
-    <label for="ingresarCantidad">Ingresa la cantidad a invertir: </label><br>
-    <input type="number" id="ingresarCantidad">
-    <button id="botonActualizarInversion">Actualizar inversión</button>
+      <div class="inv-actual">Inversion actual: <strong>$<span id="inversionActual"></span></strong></div>
+    </div>
 
-    <p>Inversion actual: <strong>$<span id="inversionActual"></span></strong></p>
+    <h3>Historial de depósitos:</h3>
+    <div id="contenedorHistorial"></div>
 
-    <br><br>
-
-    <h3>Historial de depósitos:</h3><br>
-    <div id="contenderoHistorial"></div>
-
-
+    <!-- Script -->
     <script src="./script/main.js"></script>
   </body>
 </html>
