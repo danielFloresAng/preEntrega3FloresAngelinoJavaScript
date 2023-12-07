@@ -34,8 +34,10 @@ botonActualizarInversion.addEventListener("click", function () {
 
   historialDepositos.push(historial)
 
-  inversionActual.innerHTML = parseInt(historial.cantidad) 
-  // contenedorHistorial.innerHTML = `Cantidad: $${historial.cantidad} - Fecha: ${historial.fecha}`
+  //actualizar la inversión
+  let totalActualizado = historialDepositos.reduce((sum, deposito) => sum + deposito.cantidad, 0);
+
+  inversionActual.innerHTML = totalActualizado
 
   localStorage.setItem("cantidadSumada", JSON.stringify(historialDepositos))
 
@@ -44,12 +46,9 @@ botonActualizarInversion.addEventListener("click", function () {
 }
 )
 
-
-
 let muestraHistorial = () => {
-  historialDepositos.forEach(function(cantidad) 
-  {
-    contenedorHistorial.innerHTML += `Cantidad: $${cantidad.cantidad} - Fecha: ${cantidad.fecha} <br>`
-  })
+  contenedorHistorial.innerHTML = ""
+  historialDepositos.forEach(function(deposito) {
+    contenedorHistorial.innerHTML += `Cantidad: $${deposito.cantidad} - Fecha: ${deposito.fecha} <br>`
+  });
 }
-
